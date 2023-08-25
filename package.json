@@ -2,7 +2,7 @@
   "name": "pkg-name",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.12.0",
+  "packageManager": "pnpm@8.6.12",
   "description": "",
   "author": "tttxdxd <tttxdxd@gmail.com>",
   "license": "MIT",
@@ -18,8 +18,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -47,18 +47,26 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
-    "@antfu/ni": "^0.18.0",
-    "@antfu/utils": "^0.5.2",
-    "@types/node": "^18.7.18",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.23.1",
-    "esno": "^0.16.3",
-    "pnpm": "^7.12.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.8.3",
-    "unbuild": "^0.8.11",
-    "vite": "^3.1.2",
-    "vitest": "^0.23.4"
+    "@antfu/eslint-config": "^0.40.2",
+    "@antfu/ni": "^0.21.5",
+    "@antfu/utils": "^0.7.6",
+    "@types/node": "^20.5.2",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.47.0",
+    "esno": "^0.17.0",
+    "lint-staged": "^14.0.1",
+    "pnpm": "^8.6.12",
+    "rimraf": "^5.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
